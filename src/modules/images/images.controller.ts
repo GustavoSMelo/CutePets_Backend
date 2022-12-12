@@ -1,9 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import api from '../config/api';
+import { ImagesService } from './images.service';
 
 @Controller('image')
 export class ImagesController {
-    @Get('')
+    public constructor(private readonly imagesServices: ImagesService) {}
+
+    @Get()
     public image() {
+        return this.imagesServices.getImages();
     }
 }
