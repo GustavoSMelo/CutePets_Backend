@@ -5,13 +5,15 @@ import { ConfigService } from '../config/config.service';
 export class ImagesService {
     public constructor(private configService: ConfigService) {}
 
-    public async getImages() {
-        const photo = await this.configService.returnPhotoAPI().get('/random', {
-            params: {
-                query: 'cute animals',
-            },
-        });
+    public async getImages(animals = 'animals') {
+        const { data } = await this.configService
+            .returnPhotoAPI()
+            .get('/random', {
+                params: {
+                    query: `cute ${animals}`,
+                },
+            });
 
-        return photo.data;
+        return data;
     }
 }
