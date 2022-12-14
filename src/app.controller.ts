@@ -1,12 +1,9 @@
-import { FastifyAdapter } from '@nestjs/platform-fastify';
-import { Controller, Get, Res } from '@nestjs/common';
-import { response } from 'express';
+import { Controller, Get } from '@nestjs/common';
 
 @Controller()
 export class AppController {
     @Get()
-    public health(@Res() res) {
-        const adapter = new FastifyAdapter();
-        adapter.status(res, 200);
+    public health() {
+        return 'MakeMyDay backend';
     }
 }
