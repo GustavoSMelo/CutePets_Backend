@@ -14,6 +14,5 @@ import { ImagesModule } from './modules/images/images.module';
         ImagesModule,
     ],
     controllers: [AppController],
-    providers: [],
 })
 export class AppModule {}

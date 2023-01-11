@@ -4,6 +4,6 @@ import { Controller, Get } from '@nestjs/common';
 export class AppController {
     @Get()
     public health() {
-        return 'MakeMyDay backend';
+        return 'Cute Pets Backend';
     }
 }
